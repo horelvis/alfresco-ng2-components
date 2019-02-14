@@ -66,12 +66,12 @@ describe('Task filters cloud', () => {
 
             tasksCloudDemoPage.completedTasksFilter().clickTaskFilter();
             expect(tasksCloudDemoPage.getActiveFilterName()).toBe('Completed Tasks');
-            tasksCloudDemoPage.taskListCloudComponent().getDataTable().checkContentIsNotDisplayed(newTask);
+            tasksCloudDemoPage.taskListCloudComponent().checkContentIsNotDisplayed(newTask);
 
             tasksCloudDemoPage.myTasksFilter().clickTaskFilter();
             expect(tasksCloudDemoPage.getActiveFilterName()).toBe('My Tasks');
 
-            tasksCloudDemoPage.taskListCloudComponent().getDataTable().checkContentIsDisplayed(newTask);
+            tasksCloudDemoPage.taskListCloudComponent().checkContentIsDisplayed(newTask);
         });
 
         it('[C289955] Should display task in Complete Tasks List when task is completed', async () => {
@@ -83,12 +83,12 @@ describe('Task filters cloud', () => {
 
             tasksCloudDemoPage.myTasksFilter().clickTaskFilter();
             expect(tasksCloudDemoPage.getActiveFilterName()).toBe('My Tasks');
-            tasksCloudDemoPage.taskListCloudComponent().getDataTable().checkContentIsNotDisplayed(completedTask);
+            tasksCloudDemoPage.taskListCloudComponent().checkContentIsNotDisplayed(completedTask);
 
             tasksCloudDemoPage.completedTasksFilter().clickTaskFilter();
             expect(tasksCloudDemoPage.getActiveFilterName()).toBe('Completed Tasks');
 
-            tasksCloudDemoPage.taskListCloudComponent().getDataTable().checkContentIsDisplayed(completedTask);
+            tasksCloudDemoPage.taskListCloudComponent().checkContentIsDisplayed(completedTask);
         });
 
         it('[C291792] Should select the first task filter from the list as default', () => {
